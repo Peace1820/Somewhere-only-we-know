@@ -368,7 +368,7 @@ for line in line_9_2_2:
 
 
 terminal_height, terminal_width = os.get_terminal_size()
-sys.stdout.write("\n" * terminal_height)  # clear previous text
+sys.stdout.write("\n" * terminal_height)  
 
 color_yellow = "\033[93m"
 color_pink = "\033[95m"
@@ -387,10 +387,10 @@ max_len = max(len(line) for line in lines)
 for i in range(max_len):
     for j, (line, color) in enumerate(zip(lines, colors)):
         if i < len(line):
-            sys.stdout.write("\033[{};1H".format(j+1))  # move cursor to line j+1
-            sys.stdout.write(color)  # apply color
-            sys.stdout.write(line[:i+1])  # print up to character i
-            sys.stdout.write(reset_color)  # reset color
+            sys.stdout.write("\033[{};1H".format(j+1))  
+            sys.stdout.write(color) 
+            sys.stdout.write(line[:i+1])  
+            sys.stdout.write(reset_color)  
             sys.stdout.flush()
     time.sleep(0.06)
 
